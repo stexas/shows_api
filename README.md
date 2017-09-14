@@ -2,7 +2,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href='./css/bootstrap.min.css'>
-<title>API - Shows</title>
 </head>
 <body>
 <div class="container">
