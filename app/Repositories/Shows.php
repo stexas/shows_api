@@ -6,8 +6,7 @@ use GuzzleHttp\Client;
 
 
 Class Shows
-{
-
+{	
 	public function all(){
 		 // Nuevo cliente con un url base
             $client = new Client(['base_uri' => 'http://api.tvmaze.com/search/','timeout'=>2.0]);
