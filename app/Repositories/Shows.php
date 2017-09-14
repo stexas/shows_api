@@ -14,10 +14,10 @@ Class Shows
   	}
 
 	public function all(){
-            $response = $this->client->request('GET','shows?q=game+of+thrones');
-            return $response;
+        $response = $this->client->request('GET','shows?q=game+of+thrones');
+        return $response;
 	}
-
+	
 	public function findShow($text_string){
 		$response = $this->client->request('GET','shows?q='.$text_string);
 		return $response;

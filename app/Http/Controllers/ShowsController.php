@@ -18,17 +18,51 @@ class ShowsController extends Controller
     $this->shows = $shows;
   }
 
+  public function methodNotAllowed(){
+    return response()->json(["error","unauthorized method"],401);    
+  }
+
   public function index(){
     return view("shows.index");      
   }
 
-  public function findShow(Request $request,$text_string){     
+  public function findShow(Request $request,$text_string){
+
+    $text_string = strtolower(urldecode($text_string));
+
     $method = $request->method();
+
     if ($request->isMethod('get')) {
+
+      header('Content-Type: application/json');
       $shows = $this->shows->findShow($text_string);
-      return json_decode($shows->getBody()->getContents());
+      $shows_json =  json_decode($shows->getBody()->getContents());
+
+      $one_result = array();
+      $results = array();
+
+      foreach ($shows_json as $show) {
+        $show_name = strtolower($show->show->name);
+        if($show_name == $text_string){
+          //Se hallo un resultado exacto
+          $one_result[]=$show;         
+          return json_encode($one_result);         
+        }else{
+          $results[]=$show;
+        }
+      }
+      if(count($shows_json)>0){
+        //no se hallo resultado exacto, pero si similares
+        return json_encode($results);
+      }else{
+        //No se hallo ningún resultado
+        return response()->json(["error","No Content"],406);
+      }
+    }else{
+      return response()->json(["error","unauthorized method"],401);
     }
-    return response()->json(["error","unauthorized"],401);
+
+    //return response()->json(["error","unauthorized method"],401);
   }
 
 }

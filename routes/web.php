@@ -11,24 +11,11 @@
 |
 */
 
-$router->post('/users/login', ['uses' => 'Users@getToken']);
-
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
-
-$router->get('/key', function () use ($router) {
-    return str_random(32);
-});
-
-// peticion http://localhost/api1/public/users por get Devuelve usuarios
-$router->get('/users', ['uses'=>'Users@index']);
-
-// peticion http://localhost/api1/public/users por post Crea un Usuario
-$router->post('/users', ['uses'=>'Users@createUser']);
-
-
+//Index del api
 $router->get('/shows', ['uses'=>'showsController@index']);
 
-
+//Busqueda de shows, solo permitida por metodo get
 $router->get('/shows/{text_string}', ['uses'=>'showsController@findShow']);
+
+//Methodo no permitido, aunque fallaria en cualquier caso, sirve para indicar la razón del fallo
+$router->post('/shows/{text_string}', ['uses'=>'showsController@methodNotAllowed']);

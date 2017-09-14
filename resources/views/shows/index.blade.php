@@ -26,10 +26,8 @@ You should filter these values to be non-case sensitive and non-typo tolerant (o
 <li> Laravel/Lumen</li>
 <li> Git </li>
  </ul>
-<p>Desirable
-  
-  
-  Optimize the number of HTTP requests to the third party service
+<p align="justify">
+Desirable Optimize the number of HTTP requests to the third party service
   Good structure, practices, readability and maintainability
   Tests 
   
@@ -40,9 +38,14 @@ You should filter these values to be non-case sensitive and non-typo tolerant (o
 </p>
 <p><b>Methods</b></p>
 <div class="panel panel-default">
-    <p>#1 Search Tv Shows by Title</p>
+    <h4>Search Tv Shows by Title</h4>
       <p>Usage example: <br>
         <a href="./shows/girl">http://www.apiurl.com/shows/girl</a> the word "girl" can be replaced by other word or expresion</p>
+      <p><b>Cases:</b>
+      <br>We find an exact match with the searched text, then it will only be back this unique match, i.e.<a target="_blank" href="./shows/Game of Thrones">http://www.apiurl.com/shows/Game of Thrones</a> </p>
+      <p>We did not find exact matches, but we found similar results. We will then return these results, i.e.<a target="_blank" href="./shows/girl">http://www.apiurl.com/shows/girl</a></p>
+      <p>We do not find any result, then we give back an error 406 (no content) , i.e.<a target="_blank" href="./shows/comercio">http://www.apiurl.com/shows/comercio</p>
+      <p>&nbsp;</p>
     </div>
 </div>
 </body>
