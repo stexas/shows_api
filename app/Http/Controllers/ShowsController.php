@@ -12,26 +12,23 @@ use App\Repositories\Shows;
 
 class ShowsController extends Controller
 {
-   protected $shows;
+  protected $shows;
 
-   public function __construct(Shows $shows){
-     $this->shows = $shows;
-   }
-   public function index(){
+  public function __construct(Shows $shows){
+    $this->shows = $shows;
+  }
 
-      return view("shows.index");
-       
-       
-       
+  public function index(){
+    return view("shows.index");      
+  }
+
+  public function findShow(Request $request,$text_string){     
+  $method = $request->method();
+    if ($request->isMethod('get')) {
+      $shows = $this->shows->findShow($text_string);
+      return json_decode($shows->getBody()->getContents());
     }
-    public function findShow(Request $request,$text_string){
-      echo "string buscado:".$text_string;
-      $method = $request->method();
-      if ($request->isMethod('get')) {
-          $shows = $this->shows->all();
-          return json_decode($shows->getBody()->getContents());
-      }
-      return response()->json(["error","unauthorized"],401);
-    }
+    return response()->json(["error","unauthorized"],401);
+  }
 
 }
