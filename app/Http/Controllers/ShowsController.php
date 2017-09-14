@@ -23,7 +23,7 @@ class ShowsController extends Controller
   }
 
   public function findShow(Request $request,$text_string){     
-  $method = $request->method();
+    $method = $request->method();
     if ($request->isMethod('get')) {
       $shows = $this->shows->findShow($text_string);
       return json_decode($shows->getBody()->getContents());

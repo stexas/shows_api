@@ -26,20 +26,23 @@ You should filter these values to be non-case sensitive and non-typo tolerant (o
 <li> Laravel/Lumen</li>
 <li> Git </li>
  </ul>
-Desirable
- 
- 
- Optimize the number of HTTP requests to the third party service
- Good structure, practices, readability and maintainability
- Tests 
-
-Bitbucket / Gitlab or as a compressed archive. Please remember to provide configuration
-instructions, build details and any comments on your approach. 
-And remember to commit frequently, we want to see how your code progresses!  
-	</p>
-    <div class="panel panel-default">
-    Metodo 1: <br>
-    <a href="./shows/1">test</a>
+<p>Desirable
+  
+  
+  Optimize the number of HTTP requests to the third party service
+  Good structure, practices, readability and maintainability
+  Tests 
+  
+  Bitbucket / Gitlab or as a compressed archive. Please remember to provide configuration
+  instructions, build details and any comments on your approach. 
+  And remember to commit frequently, we want to see how your code progresses!
+  </p>
+</p>
+<p><b>Methods</b></p>
+<div class="panel panel-default">
+    <p>#1 Search Tv Shows by Title</p>
+      <p>Usage example: <br>
+        <a href="./shows/girl">http://www.apiurl.com/shows/girl</a> the word "girl" can be replaced by other word or expresion</p>
     </div>
 </div>
 </body>
