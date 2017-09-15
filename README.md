@@ -31,12 +31,12 @@ You should filter these values to be non-case sensitive and non-typo tolerant (o
 <p align="justify">
 Desirable Optimize the number of HTTP requests to the third party service
   Good structure, practices, readbility and maintainability
-  Tests 
+  Tests   
   Bitbucket / Gitlab or as a compressed archive. Please remember to provide configuration
   instructions, build details and any comments on your approach. 
   And remember to commit frequently, we want to see how your code progresses!
   </p>
-</p><p><a target="_blank" href="https://www.youtube.com/watch?v=bOYOUdFjeK4">Video see in action</a></p>
+</p><p><a target="_blank" href="https://www.youtube.com/watch?v=OZLzW9kKvx4">Video see in action</a></p>
 <p><b>Methods</b></p>
 <div class="panel panel-default">
     <h4>Search Tv Shows by Title</h4>
