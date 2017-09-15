@@ -30,7 +30,7 @@ You should filter these values to be non-case sensitive and non-typo tolerant (o
  </ul>
 <p align="justify">
 Desirable Optimize the number of HTTP requests to the third party service
-  Good structure, practices, readability and maintainability
+  Good structure, practices, readbility and maintainability
   Tests 
   
   Bitbucket / Gitlab or as a compressed archive. Please remember to provide configuration
