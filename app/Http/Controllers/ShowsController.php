@@ -40,15 +40,19 @@ class ShowsController extends Controller
 
       $one_result = array();
       $results = array();
-
+      $i=0;
       foreach ($shows_json as $show) {
         $show_name = strtolower($show->show->name);
         if($show_name == $text_string){
           //Se hallo un resultado exacto
-          $one_result[]=$show;         
+          $one_result['title']=$show_name;
+          $one_result['score']=$show->score;
+          //print_r($one_result);
           return json_encode($one_result);         
         }else{
-          $results[]=$show;
+          $results[$i]['title']=$show_name;
+          $results[$i]['score']=$show->score;
+          $i++;
         }
       }
       if(count($shows_json)>0){
@@ -62,7 +66,6 @@ class ShowsController extends Controller
       return response()->json(["error","unauthorized method"],401);
     }
 
-    //return response()->json(["error","unauthorized method"],401);
+    return response()->json(["error","unauthorized method"],401);
   }
-
 }
