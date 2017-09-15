@@ -25,7 +25,7 @@ You should filter these values to be non-case sensitive and non-typo tolerant (o
 <ul>
 <li> Php 7.0 o superior</li>
 <li> Laravel/Lumen 5.5.*</li>
-<li> Gzzle 6.3</li>
+<li> Guzzle 6.3</li>
 <li> Git </li>
  </ul>
 <p align="justify">
